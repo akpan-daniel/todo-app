@@ -25,12 +25,18 @@ export default {
 </script>
 
 <template>
-  <section class="bg-gray-300 dark:bg-gray-800 rounded-lg mt-12 shadow-lg">
+  <section class="bg-gray-200 dark:bg-gray-800 rounded-lg mt-12 shadow-lg">
     <form
       class="h-[65px] flex justify-center items-center"
       @submit.prevent
       @submit="emitTodo"
     >
+      <div class="w-[65px] flex justify-center items-center">
+        <input
+          class="checkbox h-6 w-6 flex border-2 border-gray-600 justify-center items-center cursor-pointer"
+          type="checkbox"
+        />
+      </div>
       <input
         class="w-full h-[40px] bg-transparent border-0 outline outline-0 text-gray-700 p-[24px] placeholder:text-gray-500 dark:text-gray-300"
         v-model="newTodo"

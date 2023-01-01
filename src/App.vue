@@ -17,12 +17,24 @@ export default {
     TodoItem,
   },
   mounted() {
-    document.body.classList.add("bg-gray-200", "dark:bg-gray-900");
+    document.body.classList.add("bg-gray-100", "dark:bg-gray-900");
   },
   methods: {
     addTodo(todo) {
       this.todos.push(todo);
       console.log(this.todos);
+    },
+    toggleTodo(id) {
+      console.log(id);
+      this.todos.forEach((todo) => {
+        if (todo.id === id) {
+          todo.isComplete = !todo.isComplete;
+        }
+      });
+    },
+    removeTodo(todo) {
+      let index = this.todos.indexOf(todo);
+      this.todos.splice(index, 1);
     },
   },
 };
@@ -35,7 +47,13 @@ export default {
       <TodoHeader />
       <TodoInput @create-todo="addTodo" />
       <div class="mt-[25px] shadow-lg bg-transparent">
-        <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
+        <TodoItem
+          v-for="todo in todos"
+          :key="todo.id"
+          :todo="todo"
+          @toggle-todo="toggleTodo"
+          @remove-todo="removeTodo"
+        />
       </div>
     </section>
   </main>
