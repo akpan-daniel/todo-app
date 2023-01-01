@@ -2,6 +2,7 @@
 import PageHeader from "./components/PageHeader.vue";
 import TodoHeader from "./components/Todo/TodoHeader.vue";
 import TodoInput from "./components/Todo/TodoInput.vue";
+import TodoItem from "./components/Todo/TodoItem.vue";
 
 export default {
   data() {
@@ -13,6 +14,7 @@ export default {
     PageHeader,
     TodoHeader,
     TodoInput,
+    TodoItem,
   },
   mounted() {
     document.body.classList.add("bg-gray-200", "dark:bg-gray-900");
@@ -29,10 +31,13 @@ export default {
 <template>
   <main>
     <PageHeader />
-    <div class="max-w-[600px] mx-auto pt-20">
+    <section class="max-w-[600px] mx-auto pt-20">
       <TodoHeader />
       <TodoInput @create-todo="addTodo" />
-    </div>
+      <div class="mt-[25px] shadow-lg bg-transparent">
+        <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
+      </div>
+    </section>
   </main>
 </template>
 
