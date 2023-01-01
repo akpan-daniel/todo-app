@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div
-    class="todo-item flex justify-between h-[65px] bg-gray-200 border-b dark:border-gray-500 transition-all duration-200 hover:scale-[0.98] cursor-pointer shadow hover:shadow-lg dark:bg-gray-800"
+    class="todo-item flex justify-between h-[65px] bg-gray-200 border-b border-gray-300 dark:border-gray-500 transition-all duration-200 hover:scale-[0.98] cursor-pointer shadow hover:shadow-lg dark:bg-gray-800"
   >
     <div class="flex">
       <div class="w-[65px] flex justify-center items-center">
@@ -56,9 +56,8 @@ export default {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+
 .todo-item:last-of-type {
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
   border-bottom: 0px;
 }
 

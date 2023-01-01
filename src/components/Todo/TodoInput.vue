@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg-gray-200 dark:bg-gray-800 rounded-lg mt-12 shadow-lg">
+  <section class="bg-gray-200 dark:bg-gray-800 rounded-lg mt-10 mb-4 shadow-lg">
     <form
       class="h-[65px] flex justify-center items-center"
       @submit.prevent
@@ -33,7 +33,7 @@ export default {
     >
       <div class="w-[65px] flex justify-center items-center">
         <input
-          class="checkbox h-6 w-6 flex border-2 border-gray-600 justify-center items-center cursor-pointer"
+          class="checkbox h-6 w-6 flex border-1 border-gray-600 justify-center items-center cursor-pointer"
           type="checkbox"
         />
       </div>
