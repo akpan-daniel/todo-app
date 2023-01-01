@@ -1,7 +1,11 @@
 <script>
+import { useDark } from "@vueuse/core";
+
 export default {
-  props: {
-    isDark: Boolean,
+  data() {
+    return {
+      isDark: useDark(),
+    };
   },
 };
 </script>

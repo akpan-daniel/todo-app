@@ -1,30 +1,37 @@
 <script>
-import { useDark } from "@vueuse/core";
-
 import PageHeader from "./components/PageHeader.vue";
 import TodoHeader from "./components/Todo/TodoHeader.vue";
+import TodoInput from "./components/Todo/TodoInput.vue";
 
 export default {
   data() {
     return {
-      isDark: useDark(),
+      todos: [],
     };
   },
   components: {
     PageHeader,
     TodoHeader,
+    TodoInput,
   },
   mounted() {
     document.body.classList.add("bg-gray-200", "dark:bg-gray-900");
+  },
+  methods: {
+    addTodo(todo) {
+      this.todos.push(todo);
+      console.log(this.todos);
+    },
   },
 };
 </script>
 
 <template>
   <main>
-    <PageHeader :isDark="isDark" />
+    <PageHeader />
     <div class="max-w-[600px] mx-auto pt-20">
       <TodoHeader />
+      <TodoInput @create-todo="addTodo" />
     </div>
   </main>
 </template>

@@ -10,7 +10,7 @@ const toggleDark = useToggle(isDark);
     <h1 class="font-semibold text-white text-3xl tracking-[18px]">TODO</h1>
     <button @click="toggleDark()">
       <img
-        v-if="isDark"
+        v-if="!isDark"
         src="/assets/images/icon-moon.svg"
         alt="switch theme"
       />
